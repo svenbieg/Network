@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{B7095790-FD9B-4761-8E45-8E6CF584C8C1}</ItemsProjectGuid>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <ItemsSccProjectName>$/Shared/Network</ItemsSccProjectName>
+    <ItemsSccAuxPath>https://svenbieg.visualstudio.com</ItemsSccAuxPath>
+    <ItemsSccLocalPath>.</ItemsSccLocalPath>
+    <ItemsSccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</ItemsSccProvider>
+    <NMakeIncludeSearchPath>$(NMakeIncludeSearchPath);$(MSBuildThisFileDirectory)</NMakeIncludeSearchPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Network\Connection.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Network\HostAddress.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Network\IpAddress.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Network\Smtp\Email.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Network\Tcp\TcpServer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Network\Telnet\TelnetServer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Network\Udp\UdpMessage.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Network\Udp\UdpServer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Storage\Base64\Base64Helper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Network\Connection.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Network\HostAddress.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Network\IpAddress.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Network\Smtp\Email.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Network\Tcp\TcpServer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Network\Telnet\TelnetServer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Network\Udp\UdpMessage.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Network\Udp\UdpServer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Storage\Base64\Base64Helper.h" />
+  </ItemGroup>
+</Project>
