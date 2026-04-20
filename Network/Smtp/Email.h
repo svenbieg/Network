@@ -9,6 +9,7 @@
 // Using
 //=======
 
+#include "Concurrency/Task.h"
 #include "Storage/Streams/InputStream.h"
 
 
@@ -29,9 +30,10 @@ class Email: public Object
 public:
 	// Using
 	using InputStream=Storage::Streams::InputStream;
+	using Task=Concurrency::Task;
 
 	// Con-/Destructors
-	Email();
+	static inline Handle<Email> Create() { return new Email(); }
 
 	// Common
 	Handle<String> From;
@@ -41,9 +43,12 @@ public:
 	Handle<String> To;
 
 private:
+	// Con-/Destructors
+	Email()=default;
+
 	// Common
-	VOID DoSend(Handle<String> Server, Handle<String> User, Handle<String> Password);
 	INT ReadStatus(InputStream* Stream, LPSTR Buffer, UINT BufferSize);
+	VOID ThrowIfFailed(INT Status, INT Min, INT Max);
 };
 
 }}
